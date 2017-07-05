@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+
+    <link rel="stylesheet" href="/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+{{ error }}
+<div class="row content">
+    <form class="col s12" method="post" action="/login">
+        <div class="row">
+            <div class="input-field col s12 center">
+                <h2>Log In</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="username" type="text" class="validate" name="username">
+                <label for="username">User Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="password" type="password" class="validate" name="password">
+                <label for="password">Password</label>
+            </div>
+        </div>
+        <div class="center">
+            <button type="submit" class="waves-effect waves-light btn">Submit</button>
+
+        </div>
+    </form>
+</div>
+
+
+<script src="/js/jquery-1.10.2.js"></script>
+<script src="/js/materialize.min.js"></script>
+</body>
