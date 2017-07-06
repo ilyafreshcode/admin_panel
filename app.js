@@ -16,6 +16,8 @@ app.set('views', path.join(__dirname, 'content'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'content')));
 
+
+
 app.listen(3000, function () {
     console.log('Listening on port 3000!');
 });

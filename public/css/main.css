@@ -47,3 +47,7 @@
     font-family: 'Roboto';
     font-weight: 300;
 }
+
+.alert{
+    display: none;
+}
