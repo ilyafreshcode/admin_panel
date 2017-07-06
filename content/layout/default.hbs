@@ -26,26 +26,34 @@
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="/css/demo.css" rel="stylesheet" />
 
-
     <!--  Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
     <link href="/css/themify-icons.css" rel="stylesheet">
     <link href="/css/main.css" rel="stylesheet" />
 
+
+    <script src="/js/jquery-1.10.2.js" type="text/javascript"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+
 </head>
-<body>
+<body ng-app="panel">
 
 {{{ body }}}
 
-<!--   Core JS Files   -->
-<script src="/js/jquery-1.10.2.js" type="text/javascript"></script>
-<script src="/js/bootstrap.min.js" type="text/javascript"></script>
+<footer class="footer">
+    <div class="container-fluid">
+        <div class="copyright pull-right">
+            &copy; <script>document.write(new Date().getFullYear())</script>, Freshcode
+        </div>
+    </div>
+</footer>
 
-<!-- Paper Dashboard Core javascript and methods for Demo purpose -->
-<script src="/js/paper-dashboard.js"></script>
 
-<!-- Paper Dashboard DEMO methods, don't include it in your project! -->
-<script src="/js/demo.js"></script>
+<script src="/js/vendors/main.js"></script>
+
 </body>
 </html>

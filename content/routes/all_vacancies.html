@@ -1,0 +1,94 @@
+<div class="wrapper">
+    <div class="sidebar" data-background-color="white" data-active-color="success">
+
+        <div class="sidebar-wrapper">
+            <div class="logo">
+                <a href="" class="simple-text">
+                    Freshcode
+                </a>
+            </div>
+
+            <ul class="nav">
+                <li class="active">
+                    <a href="/">
+                        <i class="ti-check-box"></i>
+                        <p>Вакансии</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="ti-user"></i>
+                        <p>Отзывы</p>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-panel">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar bar1"></span>
+                        <span class="icon-bar bar2"></span>
+                        <span class="icon-bar bar3"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Вакансии</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="/logout">
+                                <i class="ti-shift-right"></i>
+                                <p>Выйти</p>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-lg-4 col-sm-6" ng-repeat="vacancy in allVacancies">
+                        <div class="card">
+                            <div class="content">
+                                <span class="vacancy-title">{{vacancy.name}}</span>
+                                <p class="vacancy-time">{{vacancy.date}}</p>
+                                <div class="footer">
+                                    <hr>
+                                    <label><input type="checkbox" value="" ng-checked="{{vacancy.active}}"> Активна</label>
+                                    <a href="" class="btn btn-primary right-position">Изменить</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+<div id="floating-button">
+    <a href="" class="plus">+</a>
+</div>
+
+
+
+
+
+

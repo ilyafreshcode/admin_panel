@@ -7,3 +7,43 @@
 .right-position{
     float: right;
 }
+
+
+#floating-button{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #00e1a4;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    z-index: 1000;
+    transition: all 0.5s;
+    box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
+}
+
+#floating-button:hover{
+    cursor: pointer;
+    transition: all 0.5s;
+    box-shadow: 0 3px 6px rgba(168, 163, 154, 1);
+}
+#floating-button a:hover{
+    color: white;
+}
+
+.plus{
+    color: white;
+    position: absolute;
+    top: 0;
+    display: block;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    line-height: 55px;
+    font-size: 38px;
+    font-family: 'Roboto';
+    font-weight: 300;
+}

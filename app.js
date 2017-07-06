@@ -7,7 +7,6 @@ var passport = require("passport");
 var exphbs  = require('express-handlebars');
 var cookieParser = require('cookie-parser');
 
-
 require('./app/passport.js')(passport);
 
 app.engine('hbs', exphbs({extname: "hbs", defaultLayout: 'default', layoutsDir: __dirname + '/content/layout/'}));
@@ -35,3 +34,4 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 app.use(cookieParser());
 
 require('./app/routers.js')(app, passport);
+require('./app/queries.js')(app);
