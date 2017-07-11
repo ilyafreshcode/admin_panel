@@ -1,22 +1,30 @@
-var LocalStrategy = require('passport-local').Strategy;
+const LocalStrategy = require('passport-local').Strategy;
+const fs = require('fs');
+const jsonfile = require('jsonfile');
+var bcrypt = require('bcryptjs');
 
-// load up the user model
-var mysql = require('mysql');
-var dbconfig = require('./database');
-var connection = mysql.createConnection(dbconfig.connection);
+module.exports = (passport) => {
 
-connection.query('USE ' + dbconfig.database);
-
-module.exports = function(passport) {
+    function getUsersByName(name){
+        var users = JSON.parse(fs.readFileSync('./app/users.json'));
+        for(var i = 0; i < users.users.length; ++i){
+            if(users.users[i].username === name){
+                return users.users[i];
+            }
+        }
+        return null;
+    }
 
     passport.serializeUser(function(user, done) {
         done(null, user);
     });
 
     passport.deserializeUser(function(name, done) {
-        connection.query("SELECT * FROM users WHERE name = ? ",[name], function(err, rows){
-            done(err, rows);
-        });
+        var user = getUsersByName(name);
+        if(user)
+            done(null, user);
+        else
+            done("User did not find", user);
     });
 
     passport.use(
@@ -27,18 +35,16 @@ module.exports = function(passport) {
                 passReqToCallback : true
             },
             function(req, username, password, done) {
-                connection.query("SELECT * FROM users WHERE name = ?",[username], function(err, rows){
-                    if (err)
-                        return done(err);
-                    if (!rows.length) {
+                var user = getUsersByName(username);
+                if(user === null)
+                    return done(null, false);
+                bcrypt.compare(password, user.password, function(err, res) {
+                    if(res)
+                        return done(null, user);
+                    else
                         return done(null, false);
-                    }
-                    if (password !== rows[0].password)
-                        return done(null, false);
-
-                    return done(null, rows[0]);
                 });
             })
-    );
+    )
 
 };

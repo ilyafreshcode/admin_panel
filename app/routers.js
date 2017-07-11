@@ -15,7 +15,7 @@ module.exports = function(app, passport) {
                 res.render('index-login', {title: "Login - Admin Panel - Freshcode", layout: false, error: true});
                 return;
             }
-            req.login(user.name, function(error) {
+            req.login(user.username, function(error) {
                 if (error) return next(error);
                 return res.redirect('/');
             });

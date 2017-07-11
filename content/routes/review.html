@@ -9,13 +9,13 @@
             </div>
 
             <ul class="nav">
-                <li class="active">
+                <li>
                     <a href="#/">
                         <i class="ti-check-box"></i>
                         <p>Вакансии</p>
                     </a>
                 </li>
-                <li>
+                <li class="active">
                     <a href="#/review">
                         <i class="ti-user"></i>
                         <p>Отзывы</p>
@@ -36,7 +36,7 @@
                         <span class="icon-bar bar2"></span>
                         <span class="icon-bar bar3"></span>
                     </button>
-                    <a class="navbar-brand" href="#/">Вакансии</a>
+                    <a class="navbar-brand" href="#/review">Отзывы</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
@@ -55,36 +55,13 @@
 
         <div class="content">
             <div class="container-fluid">
-                <div class="row">
-
-                    <div class="col-lg-4 col-sm-6" ng-repeat="vacancy in allVacancies">
-                        <div class="card">
-                            <div class="content">
-                                <span class="vacancy-title">{{vacancy.name}}</span>
-                                <p class="vacancy-time">{{vacancy.date}}</p>
-                                <div class="footer">
-                                    <hr>
-                                    <label><input type="checkbox" value="" ng-checked="{{vacancy.active}}" disabled readonly> Активна</label>
-                                    <a href="#/vacancy/edit/{{vacancy.idAllVacancies}}" class="btn btn-primary right-position">Изменить</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
 
 
-
-                </div>
             </div>
-
-
         </div>
 
     </div>
-</div>
-
-<div id="floating-button">
-    <a href="#/vacancy/add" class="plus">+</a>
 </div>
 
 
