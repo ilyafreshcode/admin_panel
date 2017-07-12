@@ -45,7 +45,39 @@
 {{{ body }}}
 
 
-<script src="/js/vendors/main.js"></script>
 
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/bootstrap-notify.js"></script>
+<script src="/js/paper-dashboard.js"></script>
+<script src="/js/demo.js"></script>
+<script type="text/javascript">
+    function showNotification(msg, icon){
+        $.notify({
+            icon: icon,
+            message: msg
+
+        },{
+            type: type[2],
+            timer: 10,
+            placement: {
+                from: "top",
+                align: "right"
+            }
+        });
+    }
+
+
+    function onhereclick(){
+        $(".showReviews .hide-block-nav").fadeToggle();
+    }
+
+</script>
+<script src="/js/vendors/main.js"></script>
+<script src="/js/vendors/CtrlEditVacancy.js"></script>
+<script src="/js/vendors/CtrlPanel.js"></script>
+<script src="/js/vendors/CtrlReview.js"></script>
+<script src="/js/vendors/CtrlEditReview.js"></script>
+<script src="/js/vendors/CtrlAddReview.js"></script>
+<script src="/js/vendors/CtrlReviewMain.js"></script>
 </body>
 </html>

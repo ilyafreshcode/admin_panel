@@ -15,14 +15,22 @@
                         <p>Вакансии</p>
                     </a>
                 </li>
-                <li class="active">
-                    <a href="#/review">
+                <li class="showReviews active">
+                    <a href="" class="showReviews" onclick="onhereclick()">
                         <i class="ti-user"></i>
                         <p>Отзывы</p>
                     </a>
+                    <ul class="hide-block-nav">
+                        <li>
+                            <a href="#/review/main">Главная</a>
+                        </li>
+                        <li class="active">
+                            <a href="#/review">Отзывы Сотрудников</a>
+                        </li>
+                    </ul>
                 </li>
-
             </ul>
+
         </div>
     </div>
 
@@ -36,7 +44,7 @@
                         <span class="icon-bar bar2"></span>
                         <span class="icon-bar bar3"></span>
                     </button>
-                    <a class="navbar-brand" href="#/review">Отзывы</a>
+                    <a class="navbar-brand" href="#/review">Отзывы Сотрудников</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
@@ -55,17 +63,37 @@
 
         <div class="content">
             <div class="container-fluid">
+                <div class="row">
 
+                    <div class="col-lg-4 col-sm-6" ng-repeat="review in reviewsData.reviews">
+                        <div class="card">
+                            <div class="content">
+                                <span class="vacancy-title">{{review.name}}</span>
+                                <hr>
+                                <div class="review-text">
+                                    {{review.text}}
+                                </div>
+                                <div class="footer">
+                                    <hr>
+                                    <div class="review-title">{{review.title}}</div>
+                                    <a href="#/review/edit/{{$index}}" class="btn btn-primary right-position">Изменить</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-
+                </div>
             </div>
         </div>
 
     </div>
 </div>
 
-
-
+<!--
+<div class="floating-button">
+    <a href="#/review/add" ng-click="update()" class="plus">+</a>
+</div>
+-->
 
 
 

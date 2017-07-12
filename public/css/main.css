@@ -9,7 +9,7 @@
 }
 
 
-#floating-button{
+.floating-button{
     width: 55px;
     height: 55px;
     border-radius: 50%;
@@ -22,13 +22,28 @@
     box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
 }
 
-#floating-button:hover{
+.floating-button:hover, .floating-button-1:hover{
     cursor: pointer;
     transition: all 0.5s;
     box-shadow: 0 3px 6px rgba(168, 163, 154, 1);
 }
-#floating-button a:hover{
+.floating-button a:hover, .floating-button-1 a:hover{
     color: white;
+}
+
+.floating-button-1{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #00e1a4;
+    position: relative;
+    z-index: 1000;
+    transition: all 0.5s;
+    box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
+}
+
+.movebutton{
+    margin: 10px 0 5px 5px;
 }
 
 .plus{
@@ -47,7 +62,81 @@
     font-family: 'Roboto';
     font-weight: 300;
 }
+.update-icon{
+    display: inline-block;
+    transform: rotate(180deg);
+}
+a:hover, a:active, a:focus{
+    color: white;
+}
 
 .alert{
     display: none;
+}
+
+.lines-description{
+    margin-top: 10px;
+}
+.form-group{
+    margin: -10px 0 0 0 !important;
+    padding: 5px 0;
+}
+.borders{
+    border: 1px solid rgba(168, 163, 154, 1);
+    border-radius: 3px;
+    margin-top: 15px;
+}
+
+.custombutton{
+    float: right;
+    padding: 1px 5px 0 5px!important;
+    margin: 10px 15px;
+}
+.custombutton-2{
+    padding: 7px 10px!important;
+}
+.position-right{
+    float: right;
+}
+
+.plusbutton{
+    margin-top: 15px;
+}
+
+.title-bold{
+    font-weight: bold;
+}
+.modal{
+    margin-top: 75px;
+}
+.modal:before{
+    content: '';
+    background-color: #101010;
+    opacity: 0.2;
+    position: fixed;
+    margin-top: -75px;
+    width: 100%;
+    height: 100vh;
+}
+
+.modal-backdrop{
+    display: none;
+}
+
+.review-title{
+    margin:0 0 5px 0;
+}
+
+.review-text{
+    margin-top: -15px;
+}
+
+.hide-block-nav{
+    display: none;
+    list-style-type: none;
+}
+
+.hide-block-nav li{
+    padding: 10px 0;
+    font-weight: bold;
 }

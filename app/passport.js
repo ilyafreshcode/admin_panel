@@ -1,9 +1,9 @@
-const LocalStrategy = require('passport-local').Strategy;
-const fs = require('fs');
-const jsonfile = require('jsonfile');
+var LocalStrategy = require('passport-local').Strategy;
+var fs = require('fs');
+var jsonfile = require('jsonfile');
 var bcrypt = require('bcryptjs');
 
-module.exports = (passport) => {
+module.exports = function(passport) {
 
     function getUsersByName(name){
         var users = JSON.parse(fs.readFileSync('./app/users.json'));

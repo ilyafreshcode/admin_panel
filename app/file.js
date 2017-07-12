@@ -1,18 +1,26 @@
 var fs = require('fs');
 var jsonfile = require('jsonfile');
 
+exports.getAllVacancy = function(){
+    return JSON.parse(fs.readFileSync('./freshcodeit.github.io/_data/single.json'));
+};
 
-exports.rewrite = function(activeVacancies){
-    var vacancy = JSON.parse(fs.readFileSync('./freshcodeit.github.io/_data/cards_vacancy.json'));
-    vacancy.first_section.card_type = [];
-    for(var i = 0; i < activeVacancies.length; ++i){
-        var temp = {
-            developer: activeVacancies[i].name,
-            status: activeVacancies[i].date,
-            link_to: activeVacancies[i].linkTo
-        };
-        vacancy.first_section.card_type.push(temp);
-    }
+exports.updateVacancy = function(vacancy){
+    jsonfile.writeFileSync('./freshcodeit.github.io/_data/single.json', vacancy);
+};
 
-    jsonfile.writeFileSync('./freshcodeit.github.io/_data/cards_vacancy.json', vacancy);
+exports.getAllReviews = function(){
+    return JSON.parse(fs.readFileSync('./freshcodeit.github.io/_data/review.json'));
+};
+
+exports.updateReview = function(review){
+    jsonfile.writeFileSync('./freshcodeit.github.io/_data/review.json', review);
+};
+
+exports.getReviewsMain = function(){
+    return JSON.parse(fs.readFileSync('./freshcodeit.github.io/_data/main.json'));
+};
+
+exports.updateReviewMain = function(review){
+    jsonfile.writeFileSync('./freshcodeit.github.io/_data/main.json', review);
 };
