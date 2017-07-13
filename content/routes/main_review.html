@@ -67,6 +67,8 @@
                     <div class="col-lg-4 col-sm-6" ng-repeat="review in reviewsMan">
                         <div class="card">
                             <div class="content">
+                                <button type="button" aria-hidden="true" class="close" ng-click="saveIndexForDelete($index)"
+                                        data-toggle="modal" data-target="#modal-first">×</button>
                                 <span class="vacancy-title">{{review.name}}</span>
                                 <hr>
                                 <div class="review-text">
@@ -81,6 +83,21 @@
                         </div>
                     </div>
                 </div>
+                <div id="modal-first" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Удалить Отзыв?</h4>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" ng-click="deleteFromFirstSection()" data-dismiss="modal">Да</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
                 <div class="floating-button-1">
                     <a href="#/review/add_main_first" ng-click="update()" class="plus">+</a>
                 </div>
@@ -89,6 +106,8 @@
                     <div class="col-lg-4 col-sm-6" ng-repeat="review in reviewsWoman">
                         <div class="card">
                             <div class="content">
+                                <button type="button" aria-hidden="true" class="close" ng-click="saveIndexForDelete($index)"
+                                        data-toggle="modal" data-target="#modal-second">×</button>
                                 <span class="vacancy-title">{{review.name}}</span>
                                 <hr>
                                 <div class="review-text">
@@ -103,6 +122,21 @@
                         </div>
                     </div>
                 </div>
+                <div id="modal-second" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Удалить Отзыв?</h4>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" ng-click="deleteFromSecondSection()" data-dismiss="modal">Да</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
                 <div class="floating-button-1">
                     <a href="#/review/add_main_second" ng-click="update()" class="plus">+</a>
                 </div>
@@ -111,9 +145,3 @@
 
     </div>
 </div>
-
-<!--
-<div class="floating-button">
-    <a href="#/review/add" ng-click="update()" class="plus">+</a>
-</div>
--->

@@ -1,3 +1,7 @@
+.content{
+    margin-top: 10px;
+}
+
 .vacancy-title{
     font-size: 24px;
 }
@@ -139,4 +143,18 @@ a:hover, a:active, a:focus{
 .hide-block-nav li{
     padding: 10px 0;
     font-weight: bold;
+}
+
+.load-block{
+    margin: 10px 0 0 0;
+}
+
+.person-img{
+    height: auto;
+    width: 25%;
+}
+
+.progress{
+    display: none;
+    height: 7px;
 }

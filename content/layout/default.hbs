@@ -71,7 +71,13 @@
         $(".showReviews .hide-block-nav").fadeToggle();
     }
 
+    window.addEventListener('message',function(event) {
+        console.log('message received:  ' + event.data);
+    },false);
+
 </script>
+<script src="/js/uploadFiles/ng-file-upload-shim.min.js"></script>
+<script src="/js/uploadFiles/ng-file-upload.min.js"></script>
 <script src="/js/vendors/main.js"></script>
 <script src="/js/vendors/CtrlEditVacancy.js"></script>
 <script src="/js/vendors/CtrlPanel.js"></script>

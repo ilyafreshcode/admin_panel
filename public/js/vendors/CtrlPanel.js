@@ -1,3 +1,7 @@
+app.controller("CtrlMenuBar", function($scope){
+    $scope.a = 'vacancy';
+});
+
 app.controller("CtrlPanel", function ($scope, $http, $window) {
     $scope.allVacancies = [];
     $http.post("/getAllVacancies").then(function (vacancies) {

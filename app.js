@@ -6,6 +6,7 @@ var path = require('path');
 var passport = require("passport");
 var exphbs  = require('express-handlebars');
 var cookieParser = require('cookie-parser');
+var multer = require('multer');
 
 require('./app/passport.js')(passport);
 
@@ -15,6 +16,7 @@ app.set('views', path.join(__dirname, 'content'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'content')));
+app.use(express.static(path.join(__dirname, 'freshcodeit.github.io')));
 
 
 
@@ -35,5 +37,6 @@ app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 app.use(cookieParser());
 
+require('./app/upload.js')(app, path, multer);
 require('./app/routers.js')(app, passport);
 require('./app/queries.js')(app);

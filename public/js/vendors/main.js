@@ -1,4 +1,4 @@
-var app = angular.module("panel", ["ngRoute"]);
+var app = angular.module("panel", ["ngRoute", "ngFileUpload"]);
 
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $locationProvider.html5Mode({
