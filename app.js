@@ -15,7 +15,7 @@ app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'content'));
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'content')));
+app.use(express.static(path.join(__dirname, 'content/routes')));
 app.use(express.static(path.join(__dirname, 'freshcodeit.github.io')));
 
 
@@ -38,5 +38,5 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 app.use(cookieParser());
 
 require('./app/upload.js')(app, path, multer);
-require('./app/routers.js')(app, passport);
+require('./app/routers.js')(app, passport, path);
 require('./app/queries.js')(app);

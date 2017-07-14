@@ -1,30 +1,27 @@
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
 
-
-
-        <div class="content">
-            <div class="container-fluid">
-                <div class="row">
-
-                    <div class="col-lg-4 col-sm-6" ng-repeat="vacancy in allVacancies">
-                        <div class="card">
-                            <div class="content">
-                                <span class="vacancy-title">{{vacancy.title}}</span>
-                                <div class="footer">
-                                    <hr>
-                                    <label><input type="checkbox" ng-checked="{{vacancy.isActive}}" ng-model="vacancy.isActive"> Активна</label>
-                                    <a href="#/vacancy/edit/{{$index}}" class="btn btn-primary right-position">Изменить</a>
-                                </div>
-                            </div>
+            <div class="col-lg-4 col-sm-6" ng-repeat="vacancy in allVacancies">
+                <div class="card">
+                    <div class="content">
+                        <span class="vacancy-title">{{vacancy.title}}</span>
+                        <div class="footer">
+                            <hr>
+                            <label><input type="checkbox" ng-checked="{{vacancy.isActive}}" ng-model="vacancy.isActive"> Активна</label>
+                            <a href="#/vacancy/edit/{{$index}}" class="btn btn-primary right-position">Изменить</a>
                         </div>
                     </div>
-
                 </div>
             </div>
 
-            <div class="floating-button">
-                <a href="" ng-click="update()" onclick="showNotification('Вакансии обновлены', 'ti-reload')" class="plus"><span class="update-icon">&#x21bb;</span></a>
-            </div>
         </div>
+    </div>
+
+    <div class="floating-button">
+        <a href="" ng-click="update()" onclick="showNotification('Вакансии обновлены', 'ti-reload')" class="plus"><span class="update-icon">&#x21bb;</span></a>
+    </div>
+</div>
 
 
 

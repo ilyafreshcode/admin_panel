@@ -1,6 +1,6 @@
-module.exports = function(app, passport) {
+module.exports = function(app, passport, path) {
     app.get('/', isLoggedIn, function (req, res) {
-        res.render('index', {title: "Admin Panel - Freshcode"});
+        res.sendFile(path.join(__dirname + '/../content/main.html'));
     });
 
     app.get('/login', isAuthorized, function (req, res) {
@@ -25,7 +25,7 @@ module.exports = function(app, passport) {
 
     app.get('/logout', function(req, res) {
         req.logout();
-        res.redirect('/');
+        res.redirect('/login');
     });
 
 

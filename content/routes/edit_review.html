@@ -1,135 +1,66 @@
-<div class="wrapper">
-    <div class="sidebar" data-background-color="white" data-active-color="success">
-
-        <div class="sidebar-wrapper">
-            <div class="logo">
-                <a href="" class="simple-text">
-                    Freshcode
-                </a>
-            </div>
-
-            <ul class="nav">
-                <li>
-                    <a href="#/">
-                        <i class="ti-check-box"></i>
-                        <p>Вакансии</p>
-                    </a>
-                </li>
-                <li class="showReviews">
-                    <a href="" class="showReviews" onclick="onhereclick()">
-                        <i class="ti-user"></i>
-                        <p>Отзывы</p>
-                    </a>
-                    <ul class="hide-block-nav">
-                        <li>
-                            <a href="#/review/main">Главная</a>
-                        </li>
-                        <li>
-                            <a href="#/review">Отзывы Сотрудников</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-
-        </div>
-    </div>
-
-    <div class="main-panel">
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar bar1"></span>
-                        <span class="icon-bar bar2"></span>
-                        <span class="icon-bar bar3"></span>
-                    </button>
-                    <a class="navbar-brand" href="#/review">Отзывы</a>
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="card col-md-8">
+                <div class="header">
+                    <h4 class="title">Редактирование</h4>
                 </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="/logout">
-                                <i class="ti-shift-right"></i>
-                                <p>Выйти</p>
-                            </a>
-                        </li>
-                    </ul>
-
-                </div>
-            </div>
-        </nav>
-
-
-        <div class="content">
-            <div class="container-fluid">
-
-                <div class="row">
-                    <div class="card col-md-8">
-                        <div class="header">
-                            <h4 class="title">Редактирование</h4>
+                <div class="content">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="alert alert-danger">
+                                        <span>Ошибка загрузки фоторграфии</span>
+                                    </div>
+                                    <label>Фото</label>
+                                    <br>
+                                    <img class="person-img" ngf-thumbnail="reviewsData.img" />
+                                    <br>
+                                    <div class="btn btn-primary load-block"
+                                         ngf-select
+                                         name="file"
+                                         ngf-pattern="'image/*'"
+                                         accept="image/*"
+                                         ngf-max-size="100MB"
+                                         ng-model="reviewsData.img">Загрузить
+                                    </div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="content">
-                            <form>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <div class="alert alert-danger">
-                                                <span>Ошибка загрузки фоторграфии</span>
-                                            </div>
-                                            <label>Фото</label>
-                                            <br>
-                                            <img class="person-img" ngf-thumbnail="reviewsData.img" />
-                                            <br>
-                                            <div class="btn btn-primary load-block"
-                                                 ngf-select
-                                                 name="file"
-                                                 ngf-pattern="'image/*'"
-                                                 accept="image/*"
-                                                 ngf-max-size="100MB"
-                                                 ng-model="reviewsData.img">Загрузить
-                                            </div>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Имя</label>
+                                    <input type="text" ng-model="reviewsData.name" class="form-control border-input" required>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>Имя</label>
-                                            <input type="text" ng-model="reviewsData.name" class="form-control border-input" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>Должность</label>
-                                            <input type="text" ng-model="reviewsData.title" class="form-control border-input" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>Отзыв</label>
-                                            <textarea ng-model="reviewsData.text" rows="4" cols="50" class="form-control border-input" required></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="text-center">
-                                    <button class="btn btn-info btn-fill btn-wd" ng-click="update()" >Изменить</button>
-                                </div>
-                            </form>
+                            </div>
                         </div>
-                    </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Должность</label>
+                                    <input type="text" ng-model="reviewsData.title" class="form-control border-input" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Отзыв</label>
+                                    <textarea ng-model="reviewsData.text" rows="4" cols="50" class="form-control border-input" required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-info btn-fill btn-wd" ng-click="update()" >Изменить</button>
+                        </div>
+                    </form>
                 </div>
-
-
             </div>
         </div>
-
     </div>
 </div>

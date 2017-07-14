@@ -1,5 +1,5 @@
 .content{
-    margin-top: 10px;
+    padding: 15px 10px;
 }
 
 .vacancy-title{
@@ -136,7 +136,6 @@ a:hover, a:active, a:focus{
 }
 
 .hide-block-nav{
-    display: none;
     list-style-type: none;
 }
 
